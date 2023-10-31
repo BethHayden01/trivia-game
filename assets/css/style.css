@@ -1,0 +1,183 @@
+/* --------- Global style */
+
+body {
+    background-color: white;
+    font-family: "Raleway", sans-serif;
+    color: gray;
+    text-align: center;
+}
+
+/* --------- Heading */
+
+.heading {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/* --------- Game layout */
+
+.quiz-area {
+    background-color: #620E0E;
+    box-sizing: border-box;
+    width: 85%;
+    height: 65vh;
+    max-height: 450px;
+    max-width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+}
+
+.score-tracker {
+    margin: 5px auto;
+    width: 60%;
+    font-size: 1.2rem;
+}
+
+#score {
+    color: green;
+    font-weight: bold;
+}
+
+#incorrect {
+    color: red;
+    font-weight: bold;
+}
+
+.scores {
+    display: inline-block;
+    padding: 25px;
+}
+
+/* --------- Buttons */
+
+.btn {
+    width: 220px;
+    height: 60px;
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn--big {
+    padding-top: 10px;
+    width: 100px;
+    height: 100px;
+    margin: 0 30px;
+    transition: all 0.5s;
+}
+
+.btn-red {
+    background-color: #57423E;
+    font-size: 1rem;
+
+}
+
+.btn-red:active,
+.btn-red:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.btn-yellow {
+    background-color: #bea6a1;
+}
+
+.btn-yellow:active,
+.btn-yellow:hover {
+    background-color: rgb(173, 149, 8);
+    color: white;
+}
+
+.btn-blue {
+    background-color: #2d4286;
+}
+
+.btn-blue:active,
+.btn-blue:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+.btn-green {
+    background-color: #6471bc;
+}
+
+.btn-green:active,
+.btn-green:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+.btn--gray {
+    margin-top: 25px;
+    background-color: gray;
+    border: 1px transparent;
+    border-radius: 20px;
+}
+
+.btn--gray:active,
+.btn--gray:hover {
+    background-color: #0d1013;
+}
+
+/* --------- Media queries */
+
+@media (max-width: 414px) {
+    .questions-area {
+        width: 100%;
+    }
+
+    .btn--big {
+        margin: 0 10px;
+        padding: 5px;
+        border: 5px solid;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .btn--big::after {
+        font-size: 0.6rem;
+        left: -0.7rem;
+    }
+
+    .btn--gray {
+        margin-top: 0;
+    }
+
+    .score-tracker {
+        width: 100%;
+    }
+
+    .scores {
+        margin: 0.5em auto;
+        display: block;
+        padding: 5px;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .quiz-area {
+        height: 70vh;
+    }
+
+    .questions-area {
+        width: 75%;
+        margin: 10px auto;
+    }
+
+    .btn--big {
+        margin: 10px 10px;
+    }
+
+
+}
