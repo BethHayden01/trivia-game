@@ -133,6 +133,12 @@ body {
     background-color: #0d1013;
 }
 
+.hide {
+    display: none;
+}
+
+}
+
 /* --------- Media queries */
 
 @media (max-width: 414px) {
