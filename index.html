@@ -18,14 +18,17 @@
     <h1 class="heading">StarWars Trivia</h1>
 
     <div class="quiz-area">
-        <div class="questions-area">
-            <button class="btn btn--big btn-red">Option1</button>
-            <button class="btn btn--big btn-yellow">Option2</button>
-            <button class="btn btn--big btn-blue">Option3</button>
-            <button class="btn btn--big btn-green">Option4</button>
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn btn--big btn-red">Option1</button>
+                <button class="btn btn--big btn-yellow">Option2</button>
+                <button class="btn btn--big btn-blue">Option3</button>
+                <button class="btn btn--big btn-green">Option4</button>
+            </div>
         </div>
-        <button class="btn btn--gray">Submit</button>
-
+    </div>
+    <button class="btn btn--gray">Submit</button>
     </div>
 
     <div class="score-tracker">

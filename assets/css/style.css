@@ -4,6 +4,8 @@ body {
     background-color: white;
     font-family: "Raleway", sans-serif;
     color: gray;
+    width: 100vw;
+    height: 100vh;
     text-align: center;
 }
 
@@ -26,6 +28,12 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 1%;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    padding-top: 100px;
 }
 
 .score-tracker {
@@ -52,8 +60,8 @@ body {
 /* --------- Buttons */
 
 .btn {
-    width: 220px;
-    height: 60px;
+    width: 500px;
+    height: 100px;
     font-family: "Raleway", sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.2px;
@@ -128,7 +136,7 @@ body {
 /* --------- Media queries */
 
 @media (max-width: 414px) {
-    .questions-area {
+    #questions-container {
         width: 100%;
     }
 
