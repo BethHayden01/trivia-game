@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/script.js"></script>
     <title>StarWars Trivia</title>
 </head>
 
@@ -27,11 +28,11 @@
                 <button class="btn btn--big btn-green">Option4</button>
             </div>
         </div>
-        <div class="start-btn">
-            <button id="start" class="start-btn btn">Start</button>
+        <div id="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
         </div>
     </div>
-    <button class="btn btn--gray hide">Submit</button>
+    <button id="submit" class="btn--gray hide">Submit</button>
     </div>
 
     <div class="score-tracker">
@@ -39,7 +40,7 @@
         <p class="scores">Incorrect Answers:<span id="incorrect">0</span></p>
     </div>
 
-    <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
