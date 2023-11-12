@@ -19,6 +19,18 @@
     <h1 class="heading">StarWars Trivia</h1>
 
     <div class="quiz-area">
+
+        <div id="welcome-contaier">
+            <div id="welcome-message">Welcome to Star Wars Trivia!</div>
+            <div id="instructions">Once you click start, your first question will appear.
+                Think carefully and once you have your answer, click it and press submit
+                If you are correct your answer will turn green, if not, the correct answer will be revealed.
+                All scores will be kept at the bottom of the game. Best of luck!
+            </div>
+
+
+
+        </div>
         <div id="question-container" class="hide">
             <div id="question">Question</div>
             <div id="answer-buttons" class="btn-grid">
@@ -34,10 +46,14 @@
     </div>
     <button id="submit" class="btn--gray hide">Submit</button>
     </div>
+    <div id="results-container">
+
+
+    </div>
 
     <div class="score-tracker">
         <p class="scores">Correct Answers:<span id="score">0</span></p>
-        <p class="scores">Incorrect Answers:<span id="incorrect">0</span></p>
+        <p class="scores">Incorrect Answers:<span id="wrong">0</span></p>
     </div>
 
 
