@@ -3,19 +3,25 @@ const questionContainerElement = document.getElementById('question-container')
 const submitButton = document.getElementById('submit')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+// let questions
+async function fetchQuizData() {
+    const res = await fetch("assets/js/json/quiz-data.json");
+    const recivedQuestions = await res.json();
+    console.log(recivedQuestions);
+    return Object.values(recivedQuestions);
+}
 
-
-
-
-
-let shuffledQuestions, currentQuestionIndex
+// let shuffledQuestions, 
+let currentQuestionIndex = 0
 
 startButton.addEventListener('click', startGame)
 
+let questions = fetchQuizData()
+
 function startGame() {
     startButton.classList.add('hide')
-    shuffledQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
+    // shuffledQuestions = questions.sort(() => Math.random() - .5)
+    // currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
     submitButton.classList.remove('hide')
     setNextQuestion()
@@ -23,7 +29,12 @@ function startGame() {
 
 function setNextQuestion() {
     resetState()
-    showQuestion(shuffledQuestions[currentQuestionIndex])
+    console.log(currentQuestionIndex)
+    console.log(questions)
+    console.log(questions[0])
+    // console.log(Object.values(questions)[0])
+    console.log(questions[currentQuestionIndex])
+    showQuestion(questions[currentQuestionIndex])
 }
 
 function showQuestion(question) {
