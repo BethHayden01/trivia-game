@@ -3,26 +3,9 @@ const questionContainerElement = document.getElementById('question-container')
 const submitButton = document.getElementById('submit')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
-const questions = [{
-    question: 'What is the name for a Robot in Star Wars?',
-    answers: [{
-            text: 'Droid',
-            correct: true
-        },
-        {
-            text: 'Bot',
-            correct: false
-        },
-        {
-            text: 'Robot',
-            correct: false
-        },
-        {
-            text: 'Machine',
-            correct: false
-        }
-    ]
-}]
+
+
+
 
 
 let shuffledQuestions, currentQuestionIndex
@@ -85,4 +68,14 @@ function selectAnswer(e) {
         element.classList.remove('wrong')
     }
 
+    function incrementScore() {
+        let oldScore = parseInt(document.getElementById("score").innerText);
+        document.getElementById("score").innerText = ++oldScore;
+
+    }
+
+    function incrementWrong() {
+        let incrementWrong = parseInt(document.getElementById("wrong").innerText);
+        document.getElementById("wrong").innerText = ++oldScore;
+    }
 }

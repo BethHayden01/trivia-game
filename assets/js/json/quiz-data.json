@@ -23,13 +23,31 @@
             "question": "What is the name for a Robot in Star Wars?",
             "options": ["Droid", "Bot", "Robot", "Machine"],
             "answer": "Droid"
-        }; {
+        },
+        {
             "question": "Where did the Clone Wars begin?",
             "options": ["Tatooine", "Geonosis", "Naboo", "Coruscant"],
             "answer": "Geonosis"
         },
         {
-
+            "question": "What is Baby Yoda's real name?",
+            "options": ["Grogu", "Alfred", "Yoda 2", "Rey"],
+            "answer": "Grogu"
+        },
+        {
+            "question": "Which planted did Obi-wan take Luke when he was born",
+            "options": ["Kamino", "Tatooine", "Bespin", "Alderaan"],
+            "answer": "Tatooine"
+        },
+        {
+            "question": "Who was Anakin Skywalker's Padawan?",
+            "options": ["Ahsoka Tano", "Yoda", "Luke Skywalker", "Rey"],
+            "answer": "Ahsoka Tano"
+        },
+        {
+            "question": "Who is Palpatine's granddaughter?",
+            "options": ["Luke Skywalker", "Ben solo", "Rey", "Kylo Ren"],
+            "answer": "Rey"
         }
     ]
 }
