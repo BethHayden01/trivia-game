@@ -1,82 +1,97 @@
-const startButton = document.getElementById('start-btn')
-const questionContainerElement = document.getElementById('question-container')
-const submitButton = document.getElementById('submit')
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
-// let questions
+const startButton = document.getElementById('start-btn');
+const questionContainerElement = document.getElementById('question-container');
+const submitButton = document.getElementById('submit');
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-buttons');
+let questions = [];
+let currentQuestionIndex = 0;
+
 async function fetchQuizData() {
     const res = await fetch("assets/js/json/quiz-data.json");
-    const recivedQuestions = await res.json();
-    console.log(recivedQuestions);
-    return Object.values(recivedQuestions);
+    gotQuestions = await res.json();
+    questions = Object.values(gotQuestions)[0];
 }
 
-// let shuffledQuestions, 
-let currentQuestionIndex = 0
-
-startButton.addEventListener('click', startGame)
-
-let questions = fetchQuizData()
+document.addEventListener('DOMContentLoaded', function () {
+    fetchQuizData();
+    console.log(questions);
+    startButton.addEventListener('click', startGame);
+});
 
 function startGame() {
-    startButton.classList.add('hide')
-    // shuffledQuestions = questions.sort(() => Math.random() - .5)
-    // currentQuestionIndex = 0
-    questionContainerElement.classList.remove('hide')
-    submitButton.classList.remove('hide')
-    setNextQuestion()
+    console.log("startGame");
+    console.log(questions);
+    startButton.classList.add('hide');
+    questionContainerElement.classList.remove('hide');
+    submitButton.classList.remove('hide');
+    setNextQuestion();
 }
 
 function setNextQuestion() {
-    resetState()
-    console.log(currentQuestionIndex)
-    console.log(questions)
-    console.log(questions[0])
+    // resetState()
+    console.log(currentQuestionIndex);
     // console.log(Object.values(questions)[0])
-    console.log(questions[currentQuestionIndex])
-    showQuestion(questions[currentQuestionIndex])
+    console.log(questions[0]);
+    showQuestion(Object.values(questions)[currentQuestionIndex]);
+    currentQuestionIndex++;
 }
 
 function showQuestion(question) {
-    questionElement.innerText = question.question
-    question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
+    questionElement.innerText = question.question;
+
+    for (let i = 0; i < question.answers; i++) {
+        const answer = question.answers[i];
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
         if (answer.correct) {
-            button.dataset.correct = answer.correct
+            button.dataset.correct = answer.correct;
         }
-        button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
-    })
+        button.addEventListener('click', selectAnswer);
+        answerButtonsElement.appendChild(button);
+    }
 }
+
+// // function showQuestion(question) {
+//     questionElement.innerText = question.question;
+//     question.answers.forEach(answer => {
+//         const button = document.createElement('button');
+//         button.innerText = answer.text;
+//         button.classList.add('btn');
+//         if (answer.correct) {
+//             button.dataset.correct = answer.correct;
+//         }
+//         button.addEventListener('click', selectAnswer);
+//         answerButtonsElement.appendChild(button);
+//     });
+// }
 
 function resetState() {
     while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
 }
 
 function selectAnswer(e) {
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct;
+    setStatusClass(document.body, correct);
     Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
+        setStatusClass(button, button.dataset.correct);
+    });
 
     function setStatusClass(element, correct) {
-        clearStatusClass(element)
+        clearStatusClass(element);
         if (correct) {
-            element.classList.add('correct')
+            element.classList.add('correct');
         } else {
-            element.classList.add('wrong')
+            element.classList.add('wrong');
         }
     }
 
     function clearStatusClass(element) {
-        element.classList.remove('correct')
-        element.classList.remove('wrong')
+        element.classList.remove('correct');
+        element.classList.remove('wrong');
     }
 
     function incrementScore() {
