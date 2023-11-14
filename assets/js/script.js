@@ -38,7 +38,6 @@ function setNextQuestion() {
 
 function showQuestion(question) {
     questionElement.innerText = question.question;
-
     for (let i = 0; i < question.answers; i++) {
         const answer = question.answers[i];
         const button = document.createElement('button');
@@ -51,20 +50,6 @@ function showQuestion(question) {
         answerButtonsElement.appendChild(button);
     }
 }
-
-// // function showQuestion(question) {
-//     questionElement.innerText = question.question;
-//     question.answers.forEach(answer => {
-//         const button = document.createElement('button');
-//         button.innerText = answer.text;
-//         button.classList.add('btn');
-//         if (answer.correct) {
-//             button.dataset.correct = answer.correct;
-//         }
-//         button.addEventListener('click', selectAnswer);
-//         answerButtonsElement.appendChild(button);
-//     });
-// }
 
 function resetState() {
     while (answerButtonsElement.firstChild) {
@@ -93,15 +78,15 @@ function selectAnswer(e) {
         element.classList.remove('correct');
         element.classList.remove('wrong');
     }
+}
 
-    function incrementScore() {
-        let oldScore = parseInt(document.getElementById("score").innerText);
-        document.getElementById("score").innerText = ++oldScore;
+function incrementScore() {
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
 
-    }
+}
 
-    function incrementWrong() {
-        let incrementWrong = parseInt(document.getElementById("wrong").innerText);
-        document.getElementById("wrong").innerText = ++oldScore;
-    }
+function incrementWrong() {
+    let incrementWrong = parseInt(document.getElementById("wrong").innerText);
+    document.getElementById("wrong").innerText = ++oldScore;
 }
