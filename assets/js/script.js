@@ -63,9 +63,6 @@ function showQuestion(question) {
     }
 }
 
-
-
-
 function incrementScore() {
     let oldScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++oldScore;
