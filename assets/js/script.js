@@ -12,6 +12,8 @@ async function fetchQuizData() {
     questions = Object.values(gotQuestions)[0];
 }
 
+//function will run after startGame
+
 document.addEventListener('DOMContentLoaded', function () {
     fetchQuizData();
     console.log(questions);
@@ -50,6 +52,9 @@ function showQuestion(question) {
         answerButtonsElement.appendChild(button);
     }
 }
+
+
+
 
 function incrementScore() {
     let oldScore = parseInt(document.getElementById("score").innerText);

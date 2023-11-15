@@ -1,52 +1,82 @@
 {
     "questions": [{
             "question": "Who is Luke Skywalker's father?",
-            "options": ["Obi-Wan Kenobi", "Darth Vader", "Emperor Palpatine", "Count Dooku"],
+            "option1": "Obi-Wan Kenobi",
+            "option2": "Darth Vader",
+            "option3": "Emperor Palpatine",
+            "option4": "Count Dooku",
             "answer": "Darth Vader"
         },
         {
             "question": "What is the name of Han Solo's ship?",
-            "options": ["Millennium Falcon", "Star Destroyer", "X-wing", "Slave I"],
+            "option1": "Millennium Falcon",
+            "option2": "Star Destroyer",
+            "option3": "X-wing",
+            "option4": "Slave I",
             "answer": "Millennium Falcon"
         },
         {
             "question": "Who trained Anakin Skywalker as a Jedi?",
-            "options": ["Yoda", "Qui-Gon Jinn", "Mace Windu", "Obi-Wan Kenobi"],
+            "option1": "Yoda",
+            "option2": "Qui-Gon Jinn",
+            "option3": "Mace Windu",
+            "option4": "Obi-Wan Kenobi",
             "answer": "Qui-Gon Jinn"
         },
         {
             "question": "What is the name of the planet where Rey finds Luke Skywalker in The Force Awakens?",
-            "options": ["Jakku", "Ahch-To", "Takodana", "D'Qar"],
+            "option1": "Jakku",
+            "option2": "Ahch-To",
+            "option3": "Takodana",
+            "option4": "D'Qar",
             "answer": "Ahch-To"
         },
         {
             "question": "What is the name for a Robot in Star Wars?",
-            "options": ["Droid", "Bot", "Robot", "Machine"],
+            "option1": "Droid",
+            "option2": "Bot",
+            "option3": "Robot",
+            "option4": "Machine",
             "answer": "Droid"
         },
         {
             "question": "Where did the Clone Wars begin?",
-            "options": ["Tatooine", "Geonosis", "Naboo", "Coruscant"],
+            "option1": "Tatooine",
+            "option2": "Geonosis",
+            "option3": "Naboo",
+            "option4": "Coruscant",
             "answer": "Geonosis"
         },
         {
             "question": "What is Baby Yoda's real name?",
-            "options": ["Grogu", "Alfred", "Yoda 2", "Rey"],
+            "option1": "Grogu",
+            "option2": "Alfred",
+            "option3": "Yoda 2",
+            "option4": "Rey",
             "answer": "Grogu"
         },
         {
             "question": "Which planted did Obi-wan take Luke when he was born",
-            "options": ["Kamino", "Tatooine", "Bespin", "Alderaan"],
+            "option1": "Kamino",
+            "option2": "Tatooine",
+            "option3": "Bespin",
+            "option4": "Alderaan",
             "answer": "Tatooine"
         },
         {
             "question": "Who was Anakin Skywalker's Padawan?",
-            "options": ["Ahsoka Tano", "Yoda", "Luke Skywalker", "Rey"],
+            "option1": "Ahsoka Tano",
+            "option2": "Yoda",
+            "option3": "Luke Skywalker",
+            "option4": "Rey",
             "answer": "Ahsoka Tano"
         },
         {
             "question": "Who is Palpatine's granddaughter?",
-            "options": ["Luke Skywalker", "Ben solo", "Rey", "Kylo Ren"],
+            "option1": "Luke Skywalker",
+            "option2": "Ben solo",
+            "option3": "Rey",
+            "option4": "Kylo Ren",
             "answer": "Rey"
         }
     ]
