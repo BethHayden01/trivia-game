@@ -23,6 +23,16 @@ document.addEventListener('DOMContentLoaded', function () {
 function startGame() {
     console.log("startGame");
     console.log(questions);
+    //Eddy code below
+    var questionOneOptionOne = questions[0].option1;
+    var questionOneOptionTwo = questions[0].option2;
+    var questionOneOptionThree = questions[0].option3;
+    var questionOneOptionFour = questions[0].option4;
+    // console.log(questions[0].option1, "heeerrrreee")
+    document.getElementById("optionOne").innerText = questionOneOptionOne;
+    document.getElementById("optionTwo").innerText = questionOneOptionTwo;
+    document.getElementById("optionThree").innerText = questionOneOptionThree;
+    document.getElementById("optionFour").innerText = questionOneOptionFour;
     startButton.classList.add('hide');
     questionContainerElement.classList.remove('hide');
     submitButton.classList.remove('hide');

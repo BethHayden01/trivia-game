@@ -30,6 +30,7 @@ body {
     padding: 1%;
 }
 
+
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
