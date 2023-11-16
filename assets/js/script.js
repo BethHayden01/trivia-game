@@ -51,9 +51,10 @@ async function questionOneQuiz() {
 
     if (questionOneOptionTwo === "Darth Vader") {
         console.log("That is correct!");
+        alert("Well done! That answer was correct!");
     } else(questionOneOptionOne, questionOneOptionThree, questionOneOptionFour === "Obi-wan Kenobi", "Emperor Palpatine", "Count Dooku");
     console.log("So close! But that answer is wrong");
-
+    alert("So close! But that answer is wrong")
 }
 
 function setNextQuestion() {
