@@ -3,6 +3,7 @@ const questionContainerElement = document.getElementById('question-container');
 const submitButton = document.getElementById('submit');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
+
 let questions = [];
 let currentQuestionIndex = 0;
 
@@ -33,10 +34,26 @@ function startGame() {
     document.getElementById("optionTwo").innerText = questionOneOptionTwo;
     document.getElementById("optionThree").innerText = questionOneOptionThree;
     document.getElementById("optionFour").innerText = questionOneOptionFour;
-    startButton.classList.add('hide');
-    questionContainerElement.classList.remove('hide');
-    submitButton.classList.remove('hide');
+
+    const selectedOptionTwo = document.getElementById("optionTwo");
+    selectedOptionTwo.addEventListener("click", questionOneQuiz);
+
+    startButton.classList.add("hide");
+    questionContainerElement.classList.remove("hide");
+    submitButton.classList.remove("hide");
     setNextQuestion();
+}
+
+async function questionOneQuiz() {
+    questions = Object.values(gotQuestions)[0];
+    var questionOneOptionTwo = questions[0].option2;
+    console.log(questionOneOptionTwo);
+
+    if (questionOneOptionTwo === "Darth Vader") {
+        console.log("That is correct!");
+    } else(questionOneOptionOne, questionOneOptionThree, questionOneOptionFour === "Obi-wan Kenobi", "Emperor Palpatine", "Count Dooku");
+    console.log("So close! But that answer is wrong");
+
 }
 
 function setNextQuestion() {
@@ -61,6 +78,11 @@ function showQuestion(question) {
         button.addEventListener('click', selectAnswer);
         answerButtonsElement.appendChild(button);
     }
+}
+
+function correctAnswer() {
+    answerButtonsElement.addEventListener('click');
+    console.log("your mom");
 }
 
 function incrementScore() {
