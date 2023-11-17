@@ -4,7 +4,6 @@ const submitButton = document.getElementById('submit');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const optionBtns = document.getElementsByClassName('btn__option')
-// console.log(optionBtns);
 const option1Answer = document.getElementById('optionOne');
 const option2Answer = document.getElementById('optionTwo');
 const option3Answer = document.getElementById('optionThree');
@@ -16,7 +15,7 @@ async function fetchQuizData() {
     gotQuestions = await res.json();
     questions = Object.values(gotQuestions)[0];
 }
-//function will run after startGame
+
 document.addEventListener('DOMContentLoaded', function () {
     fetchQuizData();
     startButton.addEventListener('click', startGame);
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function startGame() {
     displayQuestion(currentQuestionIndex)
-    //Eddy code below
     startButton.classList.add("hide");
     questionContainerElement.classList.remove("hide");
     submitButton.classList.remove("hide");
@@ -47,27 +45,18 @@ const displayQuestion = (questionIndex) => {
 const questionOneQuiz = function (e) {
     console.log(e.target.innerText);
     console.log("questionOneQuiz");
-    // console.log(index);
-    // optionBtns[index].addEventListener("click", function () {
-    //   console.log("click");
-    // });
-    // questions = Object.values(gotQuestions)[currentQuestionIndex];
-    // var questionOneOptionTwo = questions[0].option2;
-    // console.log(questionOneOptionTwo);
     if (e.target.innerText === questions[currentQuestionIndex].answer) {
         console.log("That is correct!");
         alert("Well done! That answer was correct!");
     } else {
-        // (questionOneOptionOne, questionOneOptionThree, questionOneOptionFour === "Obi-wan Kenobi", "Emperor Palpatine", "Count Dooku");
+
     }
     console.log("So close! But that answer is wrong");
     alert("So close! But that answer is wrong")
 }
 
 function setNextQuestion() {
-    // resetState()
     console.log(currentQuestionIndex);
-    // console.log(Object.values(questions)[0])
     console.log(questions[0]);
     showQuestion(Object.values(questions)[currentQuestionIndex]);
     currentQuestionIndex++;
