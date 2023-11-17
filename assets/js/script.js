@@ -3,56 +3,63 @@ const questionContainerElement = document.getElementById('question-container');
 const submitButton = document.getElementById('submit');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
-
+const optionBtns = document.getElementsByClassName('btn__option')
+// console.log(optionBtns);
+const option1Answer = document.getElementById('optionOne');
+const option2Answer = document.getElementById('optionTwo');
+const option3Answer = document.getElementById('optionThree');
+const option4Answer = document.getElementById('optionFour');
 let questions = [];
 let currentQuestionIndex = 0;
-
 async function fetchQuizData() {
     const res = await fetch("assets/js/json/quiz-data.json");
     gotQuestions = await res.json();
     questions = Object.values(gotQuestions)[0];
 }
-
 //function will run after startGame
-
 document.addEventListener('DOMContentLoaded', function () {
     fetchQuizData();
-    console.log(questions);
     startButton.addEventListener('click', startGame);
+    option1Answer.addEventListener("click", questionOneQuiz);
+    option2Answer.addEventListener("click", questionOneQuiz);
+    option3Answer.addEventListener("click", questionOneQuiz);
+    option4Answer.addEventListener("click", questionOneQuiz);
 });
 
 function startGame() {
-    console.log("startGame");
-    console.log(questions);
+    displayQuestion(currentQuestionIndex)
     //Eddy code below
-    var questionOneOptionOne = questions[0].option1;
-    var questionOneOptionTwo = questions[0].option2;
-    var questionOneOptionThree = questions[0].option3;
-    var questionOneOptionFour = questions[0].option4;
+    startButton.classList.add("hide");
+    questionContainerElement.classList.remove("hide");
+    submitButton.classList.remove("hide");
+}
+const displayQuestion = (questionIndex) => {
+    var questionOneOptionOne = questions[questionIndex].option1;
+    var questionOneOptionTwo = questions[questionIndex].option2;
+    var questionOneOptionThree = questions[questionIndex].option3;
+    var questionOneOptionFour = questions[questionIndex].option4;
     // console.log(questions[0].option1, "heeerrrreee")
     document.getElementById("optionOne").innerText = questionOneOptionOne;
     document.getElementById("optionTwo").innerText = questionOneOptionTwo;
     document.getElementById("optionThree").innerText = questionOneOptionThree;
     document.getElementById("optionFour").innerText = questionOneOptionFour;
-
-    const selectedOptionTwo = document.getElementById("optionTwo");
-    selectedOptionTwo.addEventListener("click", questionOneQuiz);
-
-    startButton.classList.add("hide");
-    questionContainerElement.classList.remove("hide");
-    submitButton.classList.remove("hide");
-    setNextQuestion();
-}
-
-async function questionOneQuiz() {
-    questions = Object.values(gotQuestions)[0];
-    var questionOneOptionTwo = questions[0].option2;
-    console.log(questionOneOptionTwo);
-
-    if (questionOneOptionTwo === "Darth Vader") {
+};
+const questionOneQuiz = function (e) {
+    console.log(e.target.innerText);
+    console.log("questionOneQuiz");
+    // console.log(index);
+    // optionBtns[index].addEventListener("click", function () {
+    //   console.log("click");
+    // });
+    // questions = Object.values(gotQuestions)[currentQuestionIndex];
+    // var questionOneOptionTwo = questions[0].option2;
+    // console.log(questionOneOptionTwo);
+    if (e.target.innerText === questions[currentQuestionIndex].answer) {
         console.log("That is correct!");
         alert("Well done! That answer was correct!");
-    } else(questionOneOptionOne, questionOneOptionThree, questionOneOptionFour === "Obi-wan Kenobi", "Emperor Palpatine", "Count Dooku");
+    } else {
+        // (questionOneOptionOne, questionOneOptionThree, questionOneOptionFour === "Obi-wan Kenobi", "Emperor Palpatine", "Count Dooku");
+    }
     console.log("So close! But that answer is wrong");
     alert("So close! But that answer is wrong")
 }
